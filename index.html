@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✨ Magical Stopwatch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="stars"></div> <!-- optional glowing bg -->
+  <div class="container">
+    <div class="timer-Display">00 : 00 : 00 : 00</div>
+    <div class="container">
+      <h1 class="heading">⏱️ Stopwatch</h1> <!-- ✨ Heading added -->
+    <ul class="laps"></ul>
+
+    <div class="buttons">
+      <button onclick="start()">Start</button>
+      <button onclick="pause()">Pause</button>
+      <button onclick="reset()">Reset</button>
+      <button onclick="restart()">Restart</button>
+      <button onclick="lap()">Lap</button>
+      <button onclick="resetLap()">Reset Laps</button>
+    </div>
+  </div>
+</body>
+</html>

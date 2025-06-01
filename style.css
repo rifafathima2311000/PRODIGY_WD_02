@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d1a26 0%, #0a0a0a 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px 30px 60px 30px;
+    box-shadow: 0 0 20px #00ffe7, 0 0 60px #00ffe7;
+    width: 95%;             /* Increased */
+    max-width: 700px;       /* Increased */
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+  }
+  .heading {
+    color: #00ffe7;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 10px pink, 0 0 20px pink;
+  }
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+  
+  .timer-Display {
+    font-size: 5rem; /* Slightly reduced to fit in one line */
+    color: #00ffe7;
+    font-weight: bold;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(0, 255, 231, 0.05);
+    box-shadow: 0 0 25px #00ffe7;
+    margin-bottom: 25px;
+    white-space: nowrap;  /* Prevent line break */
+    text-align: center;
+  }
+  
+  .laps {
+    list-style: none;
+    color: #ffffff;
+    max-height: 140px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .laps li {
+    padding: 6px 12px;
+    margin: 4px auto;
+    border-radius: 8px;
+    width: fit-content;
+    background: rgba(0, 255, 231, 0.1);
+    color: #00ffe7;
+    box-shadow: 0 0 10px #00ffe7;
+    animation: lapFlash 0.5s ease-out;
+  }
+  
+  @keyframes lapFlash {
+    0% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .stars {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .buttons button {
+    background-color: transparent;
+    border: 2px solid #00ffe7;
+    color: #00ffe7;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00ffe7, inset 0 0 5px #00ffe7;
+  }
+  
+  .buttons button:hover {
+    background-color: #00ffe7;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #00ffe7, 0 0 30px #00ffe7;
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Optional glowing background stars */
+  .stars::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('img1.png') repeat;
+    background-size: cover;
+    opacity: 0.2;
+    animation: moveStars 30s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+  }
